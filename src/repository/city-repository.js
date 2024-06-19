@@ -23,15 +23,16 @@ class CityRepository{
             console.log("something went wrong in deleteCity function inside city-repository")       
             throw {error};
         }
-    }
+    }:
 
     async updateCity(cityId, data){
         try {
             const city = await City.update(data, {
                 where: {
-                    id: cityId;
+                    id: cityId
                 }
             });
+            return true;
 
             return true;
         } catch (error) {
@@ -42,6 +43,7 @@ class CityRepository{
     async getCity(cityId){
         try {
             const city = await City.findByPk(cityId);
+            return city;
         } catch (error) {
             console.log("something went wrong in getcity function inside city-repository")       
             throw {error};
