@@ -27,6 +27,9 @@
  - Airplane Table
  - Flight
  ### Airport Table-> id, name, address, city_id, created_at, updated_at
+ '''
+ npx sequelize model:generate --name Airport --attributes name:String,address:String,cityId:Integer
+ '''
  ### City Table -> id, name, created_at, updated_at
 
  - A flight belongs to an airplane, but one airplane can be used in multiple flights.
