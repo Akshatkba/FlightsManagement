@@ -23,7 +23,7 @@ class CityRepository{
             console.log("something went wrong in deleteCity function inside city-repository")       
             throw {error};
         }
-    }:
+    }
 
     async updateCity(cityId, data){
         try {
