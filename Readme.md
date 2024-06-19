@@ -26,13 +26,12 @@
 ## DB DESIGN
  - Airplane Table
  - Flight
- - Airport
- - City
+ ### Airport Table-> id, name, address, city_id, created_at, updated_at
+ ### City Table -> id, name, created_at, updated_at
 
  - A flight belongs to an airplane, but one airplane can be used in multiple flights.
  - A city has many airports, but one airport belongs to a city.
  - One airport can have many flights, but one flight belongs to only oe airport.
-
 
 
 
