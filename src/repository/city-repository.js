@@ -5,7 +5,8 @@ class CityRepository{
         try {
             const city = await City.create({ name });
             return city;
-        } catch (error) {            
+        } catch (error) {     
+            console.log("something went wrong in createCity function inside city-repository")       
             throw {error};
         }
     }
@@ -16,8 +17,33 @@ class CityRepository{
                 where: {
                     id: cityId
                 }
-            })
+            });
+            return true;
         } catch (error) {
+            console.log("something went wrong in deleteCity function inside city-repository")       
+            throw {error};
+        }
+    }
+
+    async updateCity(cityId, data){
+        try {
+            const city = await City.update(data, {
+                where: {
+                    id: cityId;
+                }
+            });
+
+            return true;
+        } catch (error) {
+            
+        }
+    }
+
+    async getCity(cityId){
+        try {
+            const city = await City.findByPk(cityId);
+        } catch (error) {
+            console.log("something went wrong in getcity function inside city-repository")       
             throw {error};
         }
     }
