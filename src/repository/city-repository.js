@@ -1,4 +1,3 @@
-const { where } = require('sequelize');
 const  { Op } = require('sequelize') 
 const { City } = require('../models/index');
 
@@ -53,7 +52,8 @@ class CityRepository{
             await city.save();
             return city;
         } catch (error) {
-            
+            console.log("something went wrong in updateCity function inside city-repository")       
+            throw {error};
         }
     }
 
