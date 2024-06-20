@@ -25,12 +25,17 @@
 
 ## DB DESIGN
  - Airplane Table
- - Flight
+
  ### Airport Table-> id, name, address, city_id, created_at, updated_at
  '''
  npx sequelize model:generate --name Airport --attributes name:String,address:String,cityId:Integer
  '''
  ### City Table -> id, name, created_at, updated_at
+
+ ### Flight table:
+ ```
+  npx sequelize model:generate --name Flights --attributes flightNumber:String,airplaneId:Integer,departureAirportId:Integer,arrivalAirportId:Integer,arrivalTime:Date,departureTime:Date,price:Integer,boardingGate:String,totalSeats:Integer
+ ```
 
  - A flight belongs to an airplane, but one airplane can be used in multiple flights.
  - A city has many airports, but one airport belongs to a city.
